@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Churrascômetro</title>
+    </head>
+    <body>
+        <div class="content">
+            <div id="formData">
+                <h2>Informações pessoais</h2>
+                <div class="form_field">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" required />
+                </div>
+                <div class="form_field">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required />
+                </div>
+                <div class="form_field">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" required />
+                </div>
+                <input type="checkbox" id="promo" checked />
+                <label for="promo">Aceito receber e-mails com promoções</label>
+                <div class="form_button">
+                    <button onclick="nextStep()" class="btn">Próximo</button>
+                </div>
+                <div id="formDataError" class="error"></div>
+            </div>
+
+            <div id="formTotal" style="display: none">
+                <h2>Quantidade de pessoas</h2>
+
+                <div class="form_field">
+                    <label for="men">Homens:</label>
+                    <input type="number" id="men" min="0" value="0" />
+                </div>
+
+                <div class="form_field">
+                    <label for="women">Mulheres/Adultos:</label>
+                    <input type="number" id="women" min="0" value="0" />
+                </div>
+
+                <div class="form_field">
+                    <label for="children">Crianças:</label>
+                    <input type="number" id="children" min="0" value="0" />
+                </div>
+
+                <div class="form_field">
+                    <label for="drinkers">Pessoas que bebem:</label>
+                    <input type="number" id="drinkers" min="0" value="0" />
+                </div>
+
+                <div class="form_button">
+                    <button onclick="calculate()" class="btn">Calcular</button>
+                </div>
+                <div id="formTotalError" class="error"></div>
+            </div>
+
+            <div id="formResults" style="display: none">
+                <h2>Resultado</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
